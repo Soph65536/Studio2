@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd8621381ed847d4db790ca49b37c98b, type: 3}
+  m_Name: act1.4
+  m_EditorClassIdentifier: 
+  dialogueData:
+  - guid: f427f32b5bf30a2418fb57a494f3af2a
+    dialogueItem: {fileID: 11400000, guid: 2c5abfbef071455499b1d2b84f32acf1, type: 2}
+    position: {x: -101, y: -99}
+    previousguids:
+    - 073300371d8dd134ab2a1f51ca2c10bc
+  - guid: 28bcc27222782b34f92e905795f2e233
+    dialogueItem: {fileID: 11400000, guid: 3d30f1dc650e5aa48a121991aa686e6f, type: 2}
+    position: {x: 207, y: -98}
+    previousguids:
+    - f427f32b5bf30a2418fb57a494f3af2a
+  - guid: b00ba903d06eed949a06b43bef0a0b73
+    dialogueItem: {fileID: 11400000, guid: 5144475ceab366442a8df7640d00f6d2, type: 2}
+    position: {x: 906, y: -101}
+    previousguids:
+    - 28bcc27222782b34f92e905795f2e233
+  - guid: c17a952ee621f2147ba71b954d2e7e81
+    dialogueItem: {fileID: 11400000, guid: bc8ceb1948399ff418a57e193847a288, type: 2}
+    position: {x: 1227, y: -101}
+    previousguids:
+    - b00ba903d06eed949a06b43bef0a0b73
+  - guid: 56ade7689abf0e245ad7a37fb1504bed
+    dialogueItem: {fileID: 11400000, guid: 83bff04e149a8d64c882b656a9e04d9d, type: 2}
+    position: {x: 1548, y: -98}
+    previousguids:
+    - c17a952ee621f2147ba71b954d2e7e81
+  - guid: 7fceb79eb959e3e43ad0c0547c6af61d
+    dialogueItem: {fileID: 11400000, guid: 5b7934146eb644745abbfa5b50781810, type: 2}
+    position: {x: 2001, y: -92}
+    previousguids:
+    - 56ade7689abf0e245ad7a37fb1504bed
+  - guid: a4dc75f8a956b114b8907b7debdf5b60
+    dialogueItem: {fileID: 11400000, guid: 4fd39acd7d517124aa7afeb6667699ad, type: 2}
+    position: {x: 2566, y: -98}
+    previousguids:
+    - 7fceb79eb959e3e43ad0c0547c6af61d
+  - guid: 53149309d5250c243a7c92cf62de2b55
+    dialogueItem: {fileID: 11400000, guid: d83e49342e49ff24c906d66b54133e07, type: 2}
+    position: {x: 3174, y: -92}
+    previousguids:
+    - a4dc75f8a956b114b8907b7debdf5b60
+  - guid: 073300371d8dd134ab2a1f51ca2c10bc
+    dialogueItem: {fileID: 11400000, guid: 6607b810dbfbf9048b6e0d50f19adc3a, type: 2}
+    position: {x: -591, y: -101}
+    previousguids:
+    - 39968bf77977e404a8963373a4a161dd
+  - guid: 39968bf77977e404a8963373a4a161dd
+    dialogueItem: {fileID: 11400000, guid: 46ee90f93259ece4597cb78b0cf97783, type: 2}
+    position: {x: -1009, y: -95}
+    previousguids: []
