@@ -16072,6 +16072,12 @@ MonoBehaviour:
   - clipName: Plr_SwordUse
     audioClips:
     - {fileID: 8300000, guid: 390c0bb1ae3447744b47262682d02e4c, type: 3}
+  - clipName: Plr_ChargeHeavy
+    audioClips:
+    - {fileID: 8300000, guid: 461f3bf740ad2e94e964ef3f3dc3dd2a, type: 3}
+  - clipName: Plr_HeavyUse
+    audioClips:
+    - {fileID: 8300000, guid: 3fb54da73665d1a47a79b5ede34526c5, type: 3}
   - clipName: Plr_Heal
     audioClips:
     - {fileID: 8300000, guid: 3ec80e05a750f1c419e4369bf5e4b25d, type: 3}
@@ -16080,7 +16086,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: d9b9ec1e53b456443a42e0e2003ded82, type: 3}
   - clipName: Plr_ShieldHit
     audioClips:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 65673c88bea39a34c856217e22c305a1, type: 3}
   - clipName: MainMenu
     audioClips:
     - {fileID: 8300000, guid: 706fc5692fedd414ab1f41a86e93abe8, type: 3}
@@ -17652,11 +17658,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 683586938}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -235, y: 153}
-  m_SizeDelta: {x: 600, y: 200}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 600, y: 250}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &1905964347
 MonoBehaviour:
   m_ObjectHideFlags: 0

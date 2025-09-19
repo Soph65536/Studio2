@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform rotation;
 
     //audio stuff for walking
-    private AudioSource audioSource;
+    [SerializeField] private AudioSource walkAudioSource;
     private bool playingWalkSound;
 
     private void Awake()
@@ -41,7 +41,6 @@ public class PlayerMovement : MonoBehaviour
         CharacterController = GetComponent<CharacterController>(); //Gets the CharacterController from the component
         Stats = GetComponent<PlayerStats>(); //Gets the Stats from the component
 
-        audioSource = GetComponent<AudioSource>(); //sets audiosource
         playingWalkSound = false;
     }
 
@@ -154,7 +153,7 @@ public class PlayerMovement : MonoBehaviour
     {
         playingWalkSound = true;
 
-        AudioManager.Instance.PlayAudio(false, false, audioSource, "Plr_Walk");
+        AudioManager.Instance.PlayAudio(false, false, walkAudioSource, "Plr_Walk");
         yield return new WaitForSeconds(stepDelay);
 
         playingWalkSound = false;

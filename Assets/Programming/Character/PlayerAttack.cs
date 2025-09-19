@@ -45,7 +45,7 @@ public class PlayerAttack : MonoBehaviour
     [Header("Player Model")] public GameObject MainCharacter;
 
     //audio stuff for ability sounds
-    private AudioSource audioSource;
+    [SerializeField] private AudioSource skillAudioSource;
 
     private PlayerStats stats;
 
@@ -62,7 +62,6 @@ public class PlayerAttack : MonoBehaviour
         HammerModel.SetActive(false);
 
         MyAnim = MainCharacter.GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
         stats = GetComponent<PlayerStats>();
     }
 
@@ -91,7 +90,7 @@ public class PlayerAttack : MonoBehaviour
             lightAttacking = true;
             MyAnim.SetBool("Attacking", lightAttacking);
 
-            AudioManager.Instance.PlayAudio(false, false, audioSource, "Plr_SwordUse");
+            AudioManager.Instance.PlayAudio(false, false, skillAudioSource, "Plr_SwordUse");
             DamageEnemy(Physics.OverlapBox(transform.position + MainCharacter.transform.forward, Vector3.one, MainCharacter.transform.rotation), AttackType.Light);
 
             yield return new WaitForSeconds(LightAttackDelay);
@@ -113,7 +112,7 @@ public class PlayerAttack : MonoBehaviour
             heavyAttacking = true;
             MyAnim.SetBool("HeavyAttacking", heavyAttacking);
 
-            AudioManager.Instance.PlayAudio(false, false, audioSource, "Plr_SwordUse"); //##########################################################TO BE CHANGED to heavy attack sound
+            AudioManager.Instance.PlayAudio(false, false, skillAudioSource, "Plr_HeavyUse");
             //damage enemy based on normal heavy radius or charged heavy radius
             //set charged heavy dmg to heavy dmg if its too low (equivalent to normal heavy attack)
             if (ChargedHeavyDmg < HeavyDmg) 
@@ -153,7 +152,7 @@ public class PlayerAttack : MonoBehaviour
             playerMovement.WalkSpeed = 0;
 
             //start playing charging sound
-            AudioManager.Instance.PlayAudio(true, false, audioSource, "Plr_SwordUse"); //##########################################################TO BE CHANGED to charging heavy sound
+            AudioManager.Instance.PlayAudio(true, true, skillAudioSource, "Plr_ChargeHeavy");
 
             //increase heavy attack per 0.5 secs that it is being charged
             while (!heavyAttacking && isChargingChargedHeavyAttack && ChargedHeavyDmg < MaxChargedHeavyDmg)
@@ -163,7 +162,7 @@ public class PlayerAttack : MonoBehaviour
             }
 
             //stop charging sound because we aren't charging anymore
-            AudioManager.Instance.StopAudio(audioSource);
+            AudioManager.Instance.StopAudio(skillAudioSource);
 
             //reset movespeed to previous player movespeed
             playerMovement.WalkSpeed = MovementWalkSpeed;

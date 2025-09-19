@@ -34,7 +34,8 @@ public class PlayerStats : MonoBehaviour, IDamageable
 
     protected Animator MyAnim;
 
-    [HideInInspector] public AudioSource audioSource;
+    public AudioSource hitAudioSource;
+    public AudioSource skillAudioSource;
 
     [Header("Other GameObject References")]
     public GameObject MainCharacter;
@@ -53,9 +54,6 @@ public class PlayerStats : MonoBehaviour, IDamageable
         //animator
         MyAnim = MainCharacter.GetComponent<Animator>();
 
-        //audio
-        audioSource = GetComponent<AudioSource>();
-
         //script references
         attackScript = GetComponent<PlayerAttack>();
         shieldScript = GetComponent<ShieldAbility>();
@@ -73,14 +71,14 @@ public class PlayerStats : MonoBehaviour, IDamageable
         if (!shieldScript.isShieldActive)
         {
             PlayerHealth -= Amount;
-            AudioManager.Instance.PlayAudio(false, false, audioSource, "Plr_GetHit");
+            AudioManager.Instance.PlayAudio(false, false, hitAudioSource, "Plr_GetHit");
             indicator.FlashStart();
             return true;
         }
         else if (shieldScript.isShieldActive)
         {
             //if shield has blocked damage play the shield deflect sound
-            AudioManager.Instance.PlayAudio(false, false, audioSource, "Plr_ShieldHit");
+            AudioManager.Instance.PlayAudio(false, false, skillAudioSource, "Plr_ShieldHit");
         }
         return false;
     }
