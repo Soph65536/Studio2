@@ -13,18 +13,24 @@ public class AudioBGMusic : MonoBehaviour
 
     public LevelNumber whichLevel;
 
+    public float timeBetweenMusicUpdate;
+    private bool inMusicDelay;
+
     private bool inBoss1;
     private bool inBoss2;
     private bool inCombat;
 
     private AudioSource audioSource;
     private PlayerDetectNearby playerDetectNearby;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
         playerDetectNearby = GameObject.Find("Player").GetComponentInChildren<PlayerDetectNearby>();
+
+        inMusicDelay = false;
     }
 
     // Update is called once per frame
@@ -36,11 +42,22 @@ public class AudioBGMusic : MonoBehaviour
 
         if (!LevelLoading.instance.loading)
         {
-            playBGM();
+            if (!inMusicDelay)
+            {
+                StartCoroutine("PlayBGMWithDelay");
+            }
         }
     }
 
-    private void playBGM()
+    private IEnumerator PlayBGMWithDelay()
+    {
+        inMusicDelay = true;
+        PlayBGM();
+        yield return new WaitForSeconds(timeBetweenMusicUpdate);
+        inMusicDelay = false;
+    }
+
+    private void PlayBGM()
     {
         switch (whichLevel)
         {

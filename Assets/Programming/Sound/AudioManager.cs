@@ -86,9 +86,13 @@ public class AudioManager : MonoBehaviour
             //if looping and playing one of the clips to play then return
             if (looping)
             {
-                foreach (AudioClip clip in clipsToPlay)
+                //exclude charging heavy attack audio from this check ik this is bad code i want this over with
+                if(clipName != "Plr_ChargeHeavy")
                 {
-                    if(clip == audioSource.clip) { return; }
+                    foreach (AudioClip clip in clipsToPlay)
+                    {
+                        if (clip == audioSource.clip) { return; }
+                    }
                 }
             }
 

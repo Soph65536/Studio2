@@ -21,7 +21,7 @@ public class HealthObject : MonoBehaviour
                 {
                     Debug.Log("Healed player");
 
-                    AudioManager.Instance.PlayAudio(false, false, pStats.audioSource, "Plr_Heal");
+                    AudioManager.Instance.PlayAudio(false, false, pStats.hitAudioSource, "Plr_Heal");
 
                     pStats.PlayerHealth += healAmount;
 
